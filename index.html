@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BuildWise PRO – AI Construction Planning Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-header">
+  <div class="logo">🏗 BuildWise <span>PRO</span></div>
+  <div class="tagline">Generative AI Powered Construction Planning Platform</div>
+</header>
+
+<nav class="main-nav">
+  <button onclick="showPage('dashboard')">Dashboard</button>
+  <button onclick="showPage('planner')">Planner</button>
+  <button onclick="showPage('materials')">Materials</button>
+  <button onclick="showPage('costing')">Costing</button>
+  <button onclick="showPage('analytics')">Analytics</button>
+  <button onclick="showPage('ai')">AI Engine</button>
+  <button onclick="showPage('reports')">Reports</button>
+</nav>
+
+<main>
+
+<section id="dashboard" class="page active">
+  <h2>📊 Project Dashboard</h2>
+
+  <div class="stats-grid">
+    <div class="stat-card">Projects <span id="pCount">0</span></div>
+    <div class="stat-card">AI Plans <span id="planCount">0</span></div>
+    <div class="stat-card">Cost Reports <span id="costCount">0</span></div>
+    <div class="stat-card">Material Reports <span id="matCount">0</span></div>
+  </div>
+
+  <div class="panel">
+    <h3>Live AI Performance Chart</h3>
+    <canvas id="mainChart" width="900" height="350"></canvas>
+  </div>
+</section>
+
+<section id="planner" class="page">
+  <h2>🏠 Smart Construction Planner</h2>
+
+  <div class="form-grid">
+    <div>
+      <label>Plot Area (sq.ft)</label>
+      <input type="number" id="area" placeholder="Enter area">
+    </div>
+
+    <div>
+      <label>Floors</label>
+      <select id="floors">
+        <option value="1">1 Floor</option>
+        <option value="2">2 Floors</option>
+        <option value="3">3 Floors</option>
+        <option value="4">4 Floors</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Quality</label>
+      <select id="quality">
+        <option value="standard">Standard</option>
+        <option value="premium">Premium</option>
+        <option value="luxury">Luxury</option>
+      </select>
+    </div>
+  </div>
+
+  <button class="primary" onclick="generatePlan()">Generate AI Plan</button>
+
+  <div id="planOutput" class="output-box"></div>
+
+  <div class="house3d">
+    <div class="wall front"></div>
+    <div class="wall back"></div>
+    <div class="wall left"></div>
+    <div class="wall right"></div>
+    <div class="roof"></div>
+  </div>
+</section>
+
+<section id="materials" class="page">
+  <h2>🧱 Material Calculator</h2>
+
+  <div class="calc-grid">
+    <input type="number" id="m_area" placeholder="Area (sq.ft)">
+    <input type="number" id="m_floors" placeholder="Floors">
+    <button class="primary" onclick="calculateMaterial()">Calculate</button>
+  </div>
+
+  <div id="materialOutput" class="output-box"></div>
+</section>
+
+<section id="costing" class="page">
+  <h2>💰 Cost Estimator</h2>
+
+  <div class="calc-grid">
+    <input type="number" id="c_area" placeholder="Area">
+    <select id="c_quality">
+      <option value="1800">Standard</option>
+      <option value="2500">Premium</option>
+      <option value="3500">Luxury</option>
+    </select>
+    <button class="primary" onclick="calculateCost()">Estimate</button>
+  </div>
+
+  <div id="costOutput" class="output-box"></div>
+</section>
+
+<section id="analytics" class="page">
+  <h2>📈 Live Analytics</h2>
+  <canvas id="liveChart" width="900" height="350"></canvas>
+</section>
+
+<section id="ai" class="page">
+  <h2>🤖 AI Engine</h2>
+
+  <button class="primary" onclick="generateInsight()">Generate Insight</button>
+  <button class="primary" onclick="voiceAI()">Activate Voice AI</button>
+
+  <div id="aiOutput" class="output-box"></div>
+
+  <div class="avatar"></div>
+</section>
+
+<section id="reports" class="page">
+  <h2>📄 Report Generator</h2>
+
+  <button class="primary" onclick="generatePDF()">Generate Full AI Report</button>
+
+  <div id="reportStatus" class="output-box"></div>
+</section>
+
+</main>
+
+<footer>
+  <p>🚀 BuildWise PRO – Frontend AI Simulation Hackathon Edition</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
