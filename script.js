@@ -195,3 +195,54 @@ setInterval(() => {
 }, 1200);
 
 updateDashboard();
+
+
+
+function init3DHouse() {
+
+  const container = document.getElementById("threeContainer");
+
+  const scene = new THREE.Scene();
+
+  const camera = new THREE.PerspectiveCamera(75, container.clientWidth/400, 0.1, 1000);
+  camera.position.set(4,4,6);
+
+  const renderer = new THREE.WebGLRenderer({antialias:true});
+  renderer.setSize(container.clientWidth,400);
+  container.appendChild(renderer.domElement);
+
+  // Light
+  const light = new THREE.PointLight(0xffffff,1);
+  light.position.set(5,5,5);
+  scene.add(light);
+
+  const ambient = new THREE.AmbientLight(0x404040);
+  scene.add(ambient);
+
+  // House base
+  const base = new THREE.Mesh(
+    new THREE.BoxGeometry(3,2,3),
+    new THREE.MeshStandardMaterial({color:0x00ffff})
+  );
+  base.position.y = 1;
+  scene.add(base);
+
+  // Roof
+  const roof = new THREE.Mesh(
+    new THREE.ConeGeometry(2.5,1.5,4),
+    new THREE.MeshStandardMaterial({color:0xff4444})
+  );
+  roof.position.y = 2.5;
+  roof.rotation.y = Math.PI/4;
+  scene.add(roof);
+
+  function animate(){
+    requestAnimationFrame(animate);
+    scene.rotation.y += 0.005;
+    renderer.render(scene,camera);
+  }
+
+  animate();
+}
+
+init3DHouse();
