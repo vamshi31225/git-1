@@ -245,4 +245,5 @@ function init3DHouse() {
   animate();
 }
 
-init3DHouse();
+window.onload = init3DHouse;
+
