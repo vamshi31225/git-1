@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1772771012106,
+    "type": "AI Plan",
+    "details": "home",
+    "timestamp": "6/3/2026, 9:53:32 am"
+  },
+  {
+    "id": 1772771015367,
+    "type": "AI Plan",
+    "details": "home",
+    "timestamp": "6/3/2026, 9:53:35 am"
+  },
+  {
+    "id": 1772908615934,
+    "type": "AI Insight",
+    "details": "Using M25 grade instead of M20...",
+    "timestamp": "8/3/2026, 12:06:55 am"
+  },
+  {
+    "id": 1772908616805,
+    "type": "AI Insight",
+    "details": "Implement rain-water harvestin...",
+    "timestamp": "8/3/2026, 12:06:56 am"
+  },
+  {
+    "id": 1772908617555,
+    "type": "AI Insight",
+    "details": "Check local zoning laws: new s...",
+    "timestamp": "8/3/2026, 12:06:57 am"
+  }
+]
