@@ -24,7 +24,7 @@ function saveData() {
 }
 
 function loadData() {
-  let d = localStorage.getItem("buildwise");
+  // let d = localStorage.getItem("buildwise");
   if (d) BW = JSON.parse(d);
   updateDashboard();
 }
